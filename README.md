@@ -65,29 +65,29 @@ To generate standard adversarial augmented images:
 
 ```bash
 python aafg_demo.py
-This will read images using Attack_YoloDataset, apply AAFG, and save results to the configured output folder.
 ```
+This will read images using Attack_YoloDataset, apply AAFG, and save results to the configured output folder.
 
 #### B. Generate Meta-AAFG Images (Cross-Model)
 To generate images with strong generalization across different detectors:
 ```bash
 python meta_aafg_demo.py
-This script loads YOLO, FRCNN, and CenterNet simultaneously and performs the meta-learning optimization loop.
 ```
+This script loads YOLO, FRCNN, and CenterNet simultaneously and performs the meta-learning optimization loop.
 
 #### C. Generate Domain-wise Meta-AAFG Images (Cross-Domain)
 To generate images with generalization across domains (VOC/COCO):
 ```bash
 python metadomain_aafg_demo.py
-This script loads 6 models (3 VOC-trained + 3 COCO-trained) to capture domain-invariant features.
 ```
+This script loads 6 models (3 VOC-trained + 3 COCO-trained) to capture domain-invariant features.
 
 ## License:
 
 ## Acknowledgments:
 This project is based on the following open-source works:
-CompressAI: InterDigitalInc/CompressAI
-YOLOv3: ultralytics/yolov3
-Faster-RCNN & CenterNet: Implementations based on standard PyTorch repositories.
-TorchAttacks: Structure inspired by Harry24k/adversarial-attacks-pytorch.
+* CompressAI: InterDigitalInc/CompressAI
+* YOLOv3: ultralytics/yolov3
+* Faster-RCNN & CenterNet: Implementations based on standard PyTorch repositories.
+* TorchAttacks: Structure inspired by Harry24k/adversarial-attacks-pytorch.
 If you find this code useful, please cite our paper.
