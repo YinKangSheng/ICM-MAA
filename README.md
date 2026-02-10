@@ -17,11 +17,11 @@ Extensive experimental results have demonstrated the effectiveness of our design
 
 <!-- 请将你的框架图命名为 framework.png 并放在 img 文件夹下 -->
 <div align="center">
-  <img src="img/framework.png" width="800"/>
+  <img src="img/table1.png" width="800"/>
 </div>
 
 <div align="center">
-  <img src="img/visual_results.png" width="800"/>
+  <img src="img/table2.png" width="800"/>
 </div>
 
 ## Environment
@@ -30,13 +30,6 @@ Extensive experimental results have demonstrated the effectiveness of our design
 *   PyTorch 1.10.2
 *   CompressAI 1.2.4
 *   CUDA 11.3
-
-## Weights
-
-| Model | Link |
-| :--- | :--- |
-| MAA-ICM (bmshj2018) | [Baidu Drive](此处填你的网盘链接) |
-| Meta-AAFG Generator | [Baidu Drive](此处填你的网盘链接) |
 
 ## Training:
 
