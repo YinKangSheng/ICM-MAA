@@ -38,13 +38,19 @@ Generate the adversarial augmented images using the Model Set (YOLOv3, Faster-RC
 
 ```bash
 cd ./MetaAAFG && python train_meta_aafg.py --dataset VOC --epsilon 8/255 --meta_steps 10 --save_path ./augmented_data
+```
 
 ### Stage Two: Compression Fine-tuning
 Fine-tune the LIC backbone using the Meta-AAFG augmented images as pseudo ground truth.
 
 ```bash
 cd ./Compression && python train_compression.py --backbone bmshj2018 --quality 3 --lr 1e-4 --dataset ./augmented_data
+```
 
 ## Testing:
 Machine Analytics (Detection):
 Evaluate the detection performance (mAP) on PASCAL VOC, COCO, or OID datasets.
+
+## License:
+
+## Acknowledgments:
