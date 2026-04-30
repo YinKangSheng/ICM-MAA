@@ -51,10 +51,10 @@ class Attack_YoloDataset(Dataset):
         #   读取图像并转换成RGB图像
         # ------------------------------#
         image_path = "VOCdevkit/VOC2007/JPEGImages/" + img_name
-        pil_bound_max_path = "smooth_attack_images_hy8/max_" + image_name+".png"
-        pil_bound_min_path = "smooth_attack_images_hy8/min_" + image_name+".png"
-        # pil_bound_max_path = "VOCdevkit/VOC2007/JPEGImages/" + img_name
-        # pil_bound_min_path = "VOCdevkit/VOC2007/JPEGImages/" + img_name
+        #pil_bound_max_path = "smooth_attack_images_hy8/max_" + image_name+".png"
+        #pil_bound_min_path = "smooth_attack_images_hy8/min_" + image_name+".png"
+        pil_bound_max_path = "VOCdevkit/VOC2007/JPEGImages/" + img_name
+        pil_bound_min_path = "VOCdevkit/VOC2007/JPEGImages/" + img_name
         image = Image.open(image_path)
         pil_bound_max = Image.open(pil_bound_max_path)
         pil_bound_min = Image.open(pil_bound_min_path)

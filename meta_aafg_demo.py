@@ -1,18 +1,25 @@
 import cv2
 import numpy as np
+import sys
 import os
+# 把当前根目录和 models 目录加入环境变量，防止找不到内部的 nets 文件夹
+sys.path.append(os.getcwd())
+sys.path.append(os.path.join(os.getcwd(), 'models'))
+sys.path.append(os.path.join(os.getcwd(), 'nets'))
 
 import torchvision
 from torch.utils.data import DataLoader
-from frcnn import FRCNN
-from meta_aafg import Meta_AAFG
-from meta_aafg_dataloader import MataAttack_YoloDataset,yolo_dataset_collate
 
 from utils.utils import get_classes
-from yolo import YOLO
-from tqdm import tqdm
-from centernet import CenterNet
 from PIL import Image
+
+from models.frcnn import FRCNN               # frcnn 移到了 models 文件夹
+from meta_aafg import Meta_AAFG         # meta_aafg 移到了 core 文件夹
+from meta_aafg_dataloader import MataAttack_YoloDataset, yolo_dataset_collate # dataloader 移到了 data 文件夹
+
+from models.yolo import YOLO                 # yolo 移到了 models 文件夹
+from tqdm import tqdm
+from models.centernet import CenterNet       # centernet 移到了 models 文件夹
 
 if __name__ == "__main__":
     #------------------------------------------------------------------#
@@ -42,7 +49,7 @@ if __name__ == "__main__":
     #   读取数据集对应的txt
     #---------------------------#
     with open(train_annotation_path) as f:
-        train_lines = f.readlines()[1070::]
+        train_lines = f.readlines()
     # ---------------------------------------#
     #   构建数据集加载器。
     # ---------------------------------------#
@@ -50,7 +57,7 @@ if __name__ == "__main__":
 
     yolo = YOLO()
     frcnn = FRCNN()
-    centernet = CenterNet()
+    centernet = CenterNet(model_path='cen512logs/best_epoch_weights.pth')
     train_sampler = None
     shuffle = False
     batch_size = 1
@@ -75,7 +82,7 @@ if __name__ == "__main__":
             img = adv_images[n,:, x1:x2, y1:y2]
             img = torchvision.transforms.ToPILImage()(img)
             # img = img.resize((w,h), Image.BICUBIC)
-            img.save("5class_metaAttack_test/"+image_name+".png")
+            img.save("5class_metaAttack_image/"+image_name+".png")
 
 
 

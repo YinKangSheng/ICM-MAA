@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 from aafg import AAFG  
 from aafg_dataset import Attack_YoloDataset, newyolo_dataset_collate
 from utils.utils import get_classes
-from yolo import YOLO
+from models.yolo import YOLO
 from tqdm import tqdm
 
 
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     #----------------------------------------------------#
     #   获得图片路径和标签
     #----------------------------------------------------#
-    train_annotation_path   = 'new_trainvallist.txt'
+    train_annotation_path   = 'new_testlist.txt'
     #---------------------------#
     #   读取数据集对应的txt
     #---------------------------#
@@ -73,7 +73,7 @@ if __name__ == "__main__":
             img = adv_images[n,:, x1:x2, y1:y2]
             img = torchvision.transforms.ToPILImage()(img)
             # img = img.resize((w,h), Image.BICUBIC)
-            img.save("hy8_512newattack_images/"+image_name+".png")
+            img.save("VOCattack_images/"+image_name+".png")
 
 
 
