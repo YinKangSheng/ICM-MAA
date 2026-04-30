@@ -79,8 +79,7 @@ The repository currently contains VOC-style data and released experiment artifac
 
 Please download the released assets from:
 ```text
-Checkpoints:    TODO: 通过网盘分享的文件：IJCV_MAA
-链接: https://pan.baidu.com/s/1fTUTyrAR3qBpQC4V_LZGUQ?pwd=d3y7 提取码: d3y7
+Checkpoints:https://pan.baidu.com/s/1fTUTyrAR3qBpQC4V_LZGUQ?pwd=d3y7 提取码: d3y7
 ```
 
 ## Usage
